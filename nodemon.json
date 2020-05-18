@@ -1,0 +1,11 @@
+{
+    "restartable": "rs",
+    "ignore": [],
+    "exec": "ts-node src/main.ts",
+    "wathc": [
+        "src/**/*.ts"
+    ],
+    "env": {
+        "NODE_ENV": "development"
+    }
+}
