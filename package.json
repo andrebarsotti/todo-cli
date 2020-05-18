@@ -7,13 +7,13 @@
     },
     "license": "ICS",
     "private": true,
-    "scripts": { 
+    "scripts": {
         "start": "node app/main.js",
         "debug": "nodemon",
         "test": "mocha",
         "test-watch": "mocha -w",
         "build": "tsc -p tsconfig.build.json",
-        "lint": "eslint --ext .js,.jsx,.ts,.tsx ./"        
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx ./"
     },
     "devDependencies": {
         "@types/mocha": "^7.0.2",
