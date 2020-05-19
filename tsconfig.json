@@ -13,8 +13,5 @@
     "removeComments": true,
     "resolveJsonModule": true,
     "moduleResolution": "Node"
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }

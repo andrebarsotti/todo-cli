@@ -2,9 +2,10 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "rootDir": "src",
-        "outDir": "app",
+        "outDir": "app"
     },
-    "files": [
-        "./package.json"
+    "exclude": [
+        "node_modules",
+        "tests/**/*.spec.ts"
     ]
 }

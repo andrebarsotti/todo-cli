@@ -1,6 +1,7 @@
 {
     "name": "cmd-to-do",
     "main": "main.js",
+    "version": "0.0.1",
     "author": {
         "name": "Andre Claudinei Barsotti",
         "email": "andrebarsotti@gmail.com"
@@ -8,7 +9,7 @@
     "license": "ICS",
     "private": true,
     "bin": {
-        "todo": "app/main.js"
+        "todo": "./app/main.js"
     },
     "scripts": {
         "start": "node app/main.js",
@@ -42,5 +43,8 @@
         "figlet": "^1.4.0",
         "inquirer": "^7.1.0",
         "shelljs": "^0.8.4"
-    }
+    },
+    "files": [
+        "./app/"
+    ]
 }
