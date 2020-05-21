@@ -25,7 +25,7 @@ function generateFakeData(): ToDo[] {
 const filePath = path.join(__dirname,
     faker.system.commonFileName('json'));
 
-describe("Dado que existe um arquivo com a Lista de Todos.", () => {
+describe("Dado que existe um arquivo com a Lista de To-Do's.", () => {
     const data = generateFakeData();
     before(async () => {
         await writeFile(filePath, JSON.stringify(data));
@@ -40,7 +40,7 @@ describe("Dado que existe um arquivo com a Lista de Todos.", () => {
     })
 });
 
-describe("Dado que não existe um arquivo com a Lista de Todos.", () => {
+describe("Dado que não existe um arquivo com a Lista de To Do's.", () => {
     it("Então retornar a lista vazia", async () => {
         const writer = new ToDoRepositoryImplementation(filePath);
         const resultado = await writer.getToDoList();
@@ -48,7 +48,7 @@ describe("Dado que não existe um arquivo com a Lista de Todos.", () => {
     });
 });
 
-describe("Dado que modificou-se a lista de To-Dos", () => {   
+describe("Dado que modificou-se a lista de To Do's", () => {   
     it("Então salvar o arquivo", async () => {
         //Setup
         const todoList = generateFakeData();
