@@ -4,7 +4,7 @@ import { ToDo } from '../../src/model/todo';
 import * as path from 'path';
 import * as fs from 'fs';
 import { after } from 'mocha';
-import { JsonFileWriter } from '../../src/modules/jsonfilewriter';
+import { JsonFileWriter } from '../../src/modules/json-file-writer';
 import { promisify } from 'util';
 
 const writeFile = promisify(fs.writeFile);
