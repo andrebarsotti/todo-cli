@@ -1,5 +1,6 @@
 node_modules
 app
+data
 
 src/**/*.js
 src/**/*.d.ts
