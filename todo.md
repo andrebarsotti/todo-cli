@@ -1,2 +1,5 @@
 - [ ] Modularizar os passos do main.ts
 - [ ] Criar os testes de unidade
+- [ ] Mudar de arquivo Json para LowDB
+- [ ] Verificar como fazer para só apresentar o Fliget no _help_.
+- [ ] Verificar como executar no windows.
