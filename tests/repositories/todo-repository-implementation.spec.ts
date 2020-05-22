@@ -40,7 +40,7 @@ describe("Dado que existe um arquivo com a Lista de To-Do's.", () => {
     })
 });
 
-describe("Dado que não existe um arquivo com a Lista de To Do's.", () => {
+describe("Dado que não existe um arquivo com a Lista de tarefas.", () => {
     it("Então retornar a lista vazia", async () => {
         const writer = new ToDoRepositoryImplementation(filePath);
         const resultado = await writer.getToDoList();
@@ -48,7 +48,7 @@ describe("Dado que não existe um arquivo com a Lista de To Do's.", () => {
     });
 });
 
-describe("Dado que modificou-se a lista de To Do's", () => {   
+describe("Dado que modificou-se a lista de tarefas", () => {   
     it("Então salvar o arquivo", async () => {
         //Setup
         const todoList = generateFakeData();
@@ -64,4 +64,3 @@ describe("Dado que modificou-se a lista de To Do's", () => {
 
     after(async () => await deleteFile(filePath));
 });
-

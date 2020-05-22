@@ -1,8 +1,8 @@
-import { ToDoRepository } from '../intefaces/todo-repository';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
+import { ToDoService } from './todo-service';
 
-export async function doneTodo(index: string, repositorio: ToDoRepository): Promise<void> {
+export async function doneTodo(index: string, service: ToDoService): Promise<void> {
     let resposta: { index: number } = { index: 0};
     if (!index) {
         resposta = await inquirer.prompt([
@@ -14,8 +14,6 @@ export async function doneTodo(index: string, repositorio: ToDoRepository): Prom
             }
         ]);
     }
-    const lista = await repositorio.getToDoList();
-    lista[+index || resposta.index].done = true
-    repositorio.saveToDoList(lista);
+    await service.markAsDone(+index || resposta.index);
     console.log(chalk.green('Tarefa concluída com sucesso!'))
 }

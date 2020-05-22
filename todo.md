@@ -1,6 +1,5 @@
-- [ ] Modularizar os passos do main.ts
-- [ ] Criar os testes de unidade
+- [X] Modularizar os passos do main.ts
+- [X] Criar os testes de unidade
 - [ ] Verificar veririficar a cobertura dos testes.
-- [ ] Mudar de arquivo Json para LowDB
 - [X] Verificar como fazer para só apresentar o Fliget no _help_.
 - [ ] Verificar como executar no windows.

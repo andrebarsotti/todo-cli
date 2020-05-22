@@ -1,5 +1,5 @@
 import Table from 'cli-table';
-import { ToDoRepository } from '../intefaces/todo-repository';
+import { ToDoRepository } from '../services/todo-repository';
 import chalk from 'chalk';
 
 export async function listTodo(repositorio: ToDoRepository): Promise<void> {

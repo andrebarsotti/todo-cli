@@ -3,7 +3,7 @@ import util from 'util';
 import shelljs from 'shelljs'
 import path from 'path'
 import { ToDo } from '../entities/todo';
-import { ToDoRepository } from '../intefaces/todo-repository';
+import { ToDoRepository } from '../services/todo-repository';
 
 
 const readFile = util.promisify(fs.readFile);

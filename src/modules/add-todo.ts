@@ -1,8 +1,8 @@
-import { ToDoService } from '../services/todo-service';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
+import { ToDoService } from './todo-service';
 
-export async function addTodo(todo: string, service: ToDoService): Promise<void> {
+export async function addTodo(todo: string, done: boolean, service: ToDoService): Promise<void> {
     let resposta: { todo: string } = { todo: '' };
     if (!todo) {
         resposta = await inquirer.prompt([
@@ -14,6 +14,6 @@ export async function addTodo(todo: string, service: ToDoService): Promise<void>
             }
         ]);
     }
-    await service.add(todo || resposta.todo);
+    await service.add(todo || resposta.todo, done);
     console.log(chalk.green('Tarefa adicionada com sucesso!'))
 }
