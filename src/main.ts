@@ -31,9 +31,11 @@ const showTodoTable =  async (): Promise<void> => {
     console.log(table.toString());
 }
 
-//Print.
-
-console.log(chalk.cyan(figlet.textSync('To-Do CLI')));
+app.on('--help', () => {
+    console.log('');
+    console.log(chalk.cyan(figlet.textSync('To-Do CLI')));
+    console.log('');
+});
 
 //Comandos
 app.command('add [todo]')
