@@ -1,7 +1,10 @@
+import fs from 'fs';
+import util from 'util';
+import shelljs from 'shelljs'
+import path from 'path'
 import { ToDo } from '../entities/todo';
-import * as fs from 'fs';
-import * as util from 'util';
 import { ToDoRepository } from '../intefaces/todo-repository';
+
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -10,12 +13,14 @@ const arquivoNaoEncontrado = 'ENOENT';
 
 export class ToDoRepositoryImplementation implements ToDoRepository {
 
-    constructor(private path: string) {}
+    constructor(private nomeArquivo: string) {
+        shelljs.mkdir('-p', path.dirname(nomeArquivo));
+    }
     
     async getToDoList(): Promise<ToDo[]> {
         let data: ToDo[] = [];
         try {
-            data = JSON.parse(await readFile(this.path, enconding));
+            data = JSON.parse(await readFile(this.nomeArquivo, enconding));
         }
         catch(ex){
             if (ex.code !== arquivoNaoEncontrado)
@@ -25,6 +30,6 @@ export class ToDoRepositoryImplementation implements ToDoRepository {
     }
     
     async saveToDoList(list: ToDo[]): Promise<void> {
-        await writeFile(this.path, JSON.stringify(list), enconding);
+        await writeFile(this.nomeArquivo, JSON.stringify(list), enconding);
     }
 }
