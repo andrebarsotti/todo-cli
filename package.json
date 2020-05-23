@@ -12,7 +12,7 @@
         "todo": "./app/main.js"
     },
     "scripts": {
-        "test": "nyc mocha",
+        "test": "nyc --reporter=text mocha",
         "test-watch": "mocha -w",
         "build": "rm -Rfv app && tsc -p tsconfig.build.json",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
@@ -57,25 +57,20 @@
         "./app/"
     ],
     "nyc": {
-        "include": [
-          "src/**/*.ts"
-        ],
         "extension": [
-          ".ts"
+            ".ts",
+            ".tsx"
         ],
         "exclude": [
+            "**/*.d.ts",
+            "coverage",
             "node_modules",
-            "app",
-            "tests"
-        ],
-        "require": [
-          "ts-node/register"
+            "./app",
+            "./tests"
         ],
         "reporter": [
-          "text-summary",
-          "html"
+            "html"
         ],
-        "sourceMap": true,
-        "instrument": true
-    }
+        "all": true  
+        }
 }
