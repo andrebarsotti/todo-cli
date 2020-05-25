@@ -1,6 +1,6 @@
 {
     "name": "cmd-to-list",
-    "main": "./app/main.js",
+    "main": "index.js",
     "version": "0.0.1",
     "author": {
         "name": "Andre Claudinei Barsotti",
@@ -9,10 +9,10 @@
     "license": "ICS",
     "private": true,
     "bin": {
-        "todo": "./app/main.js"
+        "todo": "./app/index.js"
     },
     "scripts": {
-        "test": "nyc -c true mocha",
+        "test": "nyc -c mocha",
         "test-watch": "mocha -w",
         "build": "rm -Rfv app && tsc -p tsconfig.build.json",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
@@ -60,8 +60,7 @@
             "ts-node/register"
         ],
         "extension": [
-            ".ts",
-            ".tsx"
+            ".ts"
         ],
         "exclude": [
             "**/*.d.ts",
