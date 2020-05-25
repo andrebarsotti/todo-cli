@@ -9,8 +9,8 @@ export async function addTodo(todo: string, done: boolean, service: ToDoService)
             {
                 type: 'input',
                 name: 'todo',
-                message: 'Qual é o seu to-do?',
-                validate: (value: string): boolean | string => value ? true : 'Por favor informe um to-do.'
+                message: 'Qual é o seu tarefa?',
+                validate: (value: string): boolean | string => value ? true : 'Por favor informe uma tarefa.'
             }
         ]);
     }
