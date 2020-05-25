@@ -14,7 +14,7 @@
     "scripts": {
         "test": "nyc -c mocha",
         "test-watch": "mocha -w",
-        "build": "rm -Rfv app && tsc -p tsconfig.build.json",
+        "build": "gulp clean+build",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
         "coverage": "nyc report --reporter=html"
     },
@@ -32,8 +32,12 @@
         "@typescript-eslint/eslint-plugin": "^2.34.0",
         "@typescript-eslint/parser": "^2.34.0",
         "chai": "^4.2.0",
+        "del": "^5.1.0",
         "eslint": "^6.0.0",
         "faker": "^4.1.0",
+        "gulp": "^4.0.2",
+        "gulp-typescript": "^6.0.0-alpha.1",
+        "gulp-uglyfly": "^1.4.2",
         "mocha": "^7.1.2",
         "nyc": "^15.0.1",
         "proxyquire": "^2.1.3",
