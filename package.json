@@ -12,6 +12,7 @@
         "todo": "./app/index.js"
     },
     "scripts": {
+        "start": "ts-node src/",
         "test": "nyc -c mocha",
         "test-watch": "mocha -w",
         "build": "gulp clean+build",

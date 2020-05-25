@@ -10,7 +10,12 @@ gulp.task('build', () => {
 });
 
 gulp.task('clean', () => {
-    return del(['app','dist']);
+    return del(['app']);
 });
 
-gulp.task('clean+build', gulp.series('clean', 'build'));
+gulp.task('copy-json', () => {
+    return gulp.src('src/**/*.json')
+               .pipe(gulp.dest('app'));
+});
+
+gulp.task('clean+build', gulp.series('clean', gulp.parallel('build','copy-json')));
